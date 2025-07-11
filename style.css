@@ -1,0 +1,60 @@
+body{
+    font-family: "Black Han Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.up{
+
+    width: auto;
+    height: 120px;
+    background-color: #7fd8f0;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+
+img{
+    margin-left: 10%;
+    height: 60px;
+}
+.right_up{
+    margin-left: 80%;
+
+}
+
+
+.down{
+    margin-top: 10%;
+}
+p{
+    font-size: 25px;
+    width: 80%;
+    height: 40px;
+    background-color: rgb(255, 28, 28);
+    color: white;
+    border-radius: 10px;
+}
+
+.write{
+    margin-left: 3%;
+
+    margin-top: 15%;
+
+
+}
+
+.log_btn{
+    margin-right: 10%;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.logo{
+    height: 100px;
+    width: 100px;
+    margin-right: 80%;
+    margin-left: 5%;
+}
