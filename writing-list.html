@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>게시판</title>
+  <link rel="stylesheet" href="1.css">
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {  
+    padding: 7px;
+    text-align: center;
+    
+    }
+    
+    input[type="text"] {
+    width: 80%;
+    padding: 7px;
+    box-sizing: border-box;
+    
+    }
+    
+    .write-btn {
+    padding: 5px 10px;
+    }
+
+     .pagination {
+    margin-top: 20px;
+    text-align: center; 
+    
+  }
+
+  .pagination a {
+    margin: 5px;
+    }
+  </style>
+</head>
+
+
+
+
+<body>
+
+  <table>
+    <thead>
+      <tr>
+        <th>번호</th>
+        <th>카테고리</th>
+        <th>제목</th>
+        <th>
+          <button class="write-btn">글 쓰기</button>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody id="post-body">
+      <tr>
+        <td>00001</td>
+        <td>공지사항</td>
+        <td>환영합니다!</td>
+        <td></td>
+      </tr>
+    </tbody>
+
+
+    <tfoot>
+      <tr>
+        <td></td>
+        <td><input type="text" id="category-input" placeholder="카테고리"></td>
+        <td><input type="text" id="title-input" placeholder="제목"></td>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <div class="pagination">
+    <a href="#;">이전</a>
+    <a href="#;">1</a>
+    <a href="#;">2</a>
+    <a href="#;">3</a>
+    <a href="#;">4</a>
+    <a href="#;">5</a>
+    <a href="#;">다음</a>
+  </div>
+
+
+
+</body>
+</html>
