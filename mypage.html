@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>마이페이지</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f9f9f9;
+      padding: 30px;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #333;
+    }
+    .info {
+      margin: 10px 0;
+    }
+    button {
+      margin-top: 15px;
+      padding: 8px 12px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button.logout {
+      background-color: #f44336;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 id="welcome">👋 만나서 반갑습니다!</h2>
+    <div class="info"><strong>이름:</strong> <span id="name">홍길동</span></div>
+    <div class="info"><strong>아이디:</strong> <span id="userid">hong123</span></div>
+    <div class="info"><strong>가입일:</strong> <span id="joindate"></span></div>
+    <div class="info"><strong>자기소개:</strong> <span id="bio">저는 웹 개발을 좋아합니다!</span></div>
+
+    <button onclick="editInfo()">정보 수정</button>
+    <button class="logout" onclick="logout()">로그아웃</button>
+  </div>
+
+  <script>
+    // 오늘 날짜 구하기
+    const today = new Date();
+    const formattedDate = `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+    document.getElementById("joindate").textContent = formattedDate;
+
+    // 사용자 정보 초기화
+    const userInfo = {
+      name: document.getElementById("name").textContent,
+      userid: document.getElementById("userid").textContent,
+      joindate: formattedDate,
+      bio: document.getElementById("bio").textContent
+    };
+
+    // 환영 문구 업데이트 함수
+    function updateWelcome() {
+      document.getElementById("welcome").textContent = `${userInfo.name}님, 만나서 반갑습니다!`;
+    }
+
+    updateWelcome(); // 초기 실행
+
+    // 정보 수정 함수
+    function editInfo() {
+      const newName = prompt("이름을 수정하세요", userInfo.name);
+      const newUserid = prompt("아이디를 수정하세요", userInfo.userid);
+      const newBio = prompt("자기소개를 수정하세요", userInfo.bio);
+
+      if (newName) {
+        userInfo.name = newName;
+        document.getElementById("name").textContent = newName;
+      }
+      if (newUserid) {
+        userInfo.userid = newUserid;
+        document.getElementById("userid").textContent = newUserid;
+      }
+      if (newBio) {
+        userInfo.bio = newBio;
+        document.getElementById("bio").textContent = newBio;
+      }
+
+      updateWelcome(); // 수정 후 환영 문구 다시 출력
+    }
+
+    function logout() {
+      alert("로그아웃 되었습니다.");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
